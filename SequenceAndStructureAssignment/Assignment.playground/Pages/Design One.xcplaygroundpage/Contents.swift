@@ -18,25 +18,58 @@
 import Cocoa
 import PlaygroundSupport
 
+
+
 // Create canvas
-let canvas = Canvas(width: 500, height: 500)
+let canvas = Canvas(width: 300, height: 300)
+canvas.defaultBorderWidth = 2
 
-// Generate a grid
+
+//assignment statement line 28, line 38-39
 canvas.drawShapesWithFill = false
-canvas.defaultBorderWidth = 1
-
-
-// This loop makes a 10 rows of columns
-for x in stride(from: 25, through: 475, by: 50){
+for x in stride(from: 0, through: 30, by: 1){
+    let diameter = random(from: 30, toButNotIncluding: 200)
     
-    // This loop makes a single column, bottom to top
-    for y in stride(from: 25, through: 475, by: 50) {
-        
-        // Draw the shapes
-        canvas.drawEllipse(centreX: x, centreY: y, width: 2, height: 2)
-        canvas.drawRectangle(centreX: x, centreY: y, width: 50, height: 50)
+    //arithmitic operator line 31
+    if (diameter > 30){
+        canvas.borderColor = Color(hue: diameter * x, saturation: 100, brightness: 100, alpha: 100)
     }
+    else{
+        canvas.borderColor = Color.black
+    }
+    
+    let x = random(from: 0, toButNotIncluding: 301)
+    let y = random(from: 0, toButNotIncluding: 301)
+    canvas.drawEllipse(centreX: x, centreY: y, width: diameter, height: diameter)
 }
+//big red triangle
+canvas.lineColor = Color.red
+for y in stride(from: 40, through: 75, by: 1){
+    canvas.drawLine(fromX: 10, fromY:75 , toX: 290, toY: y)
+}
+
+//big yellow triangle
+canvas.lineColor = Color.yellow
+for x in stride(from: 100, through: 145, by: 1){
+    canvas.drawLine(fromX: 250, fromY: 10, toX: x, toY: 290)
+}
+
+//big black triangle
+canvas.lineColor = Color.black
+for z in stride(from: 35, through: 70, by: 1){
+    canvas.drawLine(fromX: 200, fromY: 290, toX: z, toY: 10)
+}
+
+//small yellow triangle
+canvas.lineColor = Color.red
+for a in stride(from: 53, through: 75, by: 1){
+    canvas.drawLine(fromX: 10, fromY: 75, toX: 190, toY: a)
+}
+
+canvas.copyToClipboard()
+
+
+
 
 
 /*:
