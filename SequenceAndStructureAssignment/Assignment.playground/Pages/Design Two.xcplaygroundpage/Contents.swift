@@ -25,18 +25,17 @@ let canvas = Canvas(width: 500, height: 500)
 canvas.drawShapesWithFill = false
 canvas.defaultBorderWidth = 1
 
-
-
 // This loop makes a 10 rows of columns
 for x in stride(from: 25, through: 475, by: 50){
     
     // This loop makes a single column, bottom to top
     for y in stride(from: 25, through: 475, by: 50) {
-        var a = random(from: 1, toButNotIncluding: 45)
+        var a = random(from: 2, toButNotIncluding: 40)
+        var w = random(from: 0, toButNotIncluding: 500)
         
-        canvas.borderColor = Color(hue: x, saturation: y, brightness: 100, alpha: 100)
-        // Draw the shapes
-        canvas.drawEllipse(centreX: x, centreY: y, width: a, height: a)
+        
+        canvas.drawRectangle(centreX: 500/x, centreY: y, width: w, height: 50)
+         canvas.drawRectangle(centreX: 450 - 500/x, centreY: y, width: w, height: 50)
     }
 }
 
