@@ -22,58 +22,58 @@ import PlaygroundSupport
 let canvas = Canvas(width: 500, height: 500)
 
 canvas.drawShapesWithFill = true
+canvas.drawShapesWithBorders = false
+canvas.defaultBorderWidth = 5
 
 let h = 50
 
-var p = random(from: 15, toButNotIncluding: 30)
+var p = random(from: 15, toButNotIncluding: 20)
+var a = 1
 
-var z = 0
-var w = 0
+var z = 1
+var w = 1
 
-var t = 0
-var i = 0
+var t = 1
+var i = 1
 
-var q = 0
-var u = 0
+var q = 1
+var u = 1
 
-var r = 0
-var l = 0
+var r = 1
+var l = 1
 
-var o = 0
-var e = 0
+var o = 1
+var e = 1
 
-var k = 0
-var g = 0
+var k = 1
+var g = 1
 
-var f = 0
-var d = 0
+var f = 1
+var d = 1
 
-var s = 0
-var c = 0
+var s = 1
+var c = 1
 
-var j = 0
-var b = 0
+var j = 1
+var b = 1
 
-var n = 0
-var m = 0
-
+var n = 1
+var m = 1
 
 for x in stride(from: 0, through: 500, by: p){
-    z = z + w
-    i = i + t
-    u = u + q
-    r = r + l
-    o = o + e
-    k = k + g
-    f = f + d
-    s = s + c
-    j = j + b
     
-    n = n + m
+    z = z + w - 1
+    i = i + t - 1
+    u = u + q - 1
+    r = r + l - 1
+    o = o + e - 1
+    k = k + g - 1
+    f = f + d - 1
+    s = s + c - 1
+    j = j + b - 1
+    n = n + m - 1
     
     
-    
-
     w = random(from: 5, toButNotIncluding: 50)
     t = random(from: 5, toButNotIncluding: 50)
     q = random(from: 5, toButNotIncluding: 50)
@@ -85,62 +85,46 @@ for x in stride(from: 0, through: 500, by: p){
     b = random(from: 5, toButNotIncluding: 50)
     m = random(from: 5, toButNotIncluding: 50)
     
-    // This loop makes a single column, bottom to top
+    
+    // arithmatic operators are used every 3 lines in the 
     for y in stride(from: 0, through: 15, by: 10) {
+        
+          a = random(from: 0, toButNotIncluding: 10000)
 
-        canvas.fillColor = Color(hue: z * w, saturation: 100, brightness: 100, alpha: 100)
-        canvas.drawRectangle(bottomLeftX: z, bottomLeftY: 0, width: w , height: h)
+        canvas.fillColor = Color(hue: z * w * a, saturation: 100, brightness: 100, alpha: 100)
+        canvas.drawRectangle(bottomLeftX: z - 1, bottomLeftY: 0, width: w , height: h)
         
+        canvas.fillColor = Color(hue: i * t * a, saturation: 100, brightness: 100, alpha: 100)
+        canvas.drawRectangle(bottomLeftX: i - 1, bottomLeftY: 50, width: t, height: h)
         
+        canvas.fillColor = Color(hue: u * q * a, saturation: 100, brightness: 100, alpha: 100)
+        canvas.drawRectangle(bottomLeftX: u - 1, bottomLeftY: 100, width: q, height: h)
         
-        canvas.fillColor = Color(hue: i * t, saturation: 100, brightness: 100, alpha: 100)
-        canvas.drawRectangle(bottomLeftX: i, bottomLeftY: 50, width: t, height: h)
+        canvas.fillColor = Color(hue: r * l * a, saturation: 100, brightness: 100, alpha: 100)
+        canvas.drawRectangle(bottomLeftX: r - 1, bottomLeftY: 150, width: l, height: h)
         
+        canvas.fillColor = Color(hue: o * e * a, saturation: 100, brightness: 100, alpha: 100)
+        canvas.drawRectangle(bottomLeftX: o - 1, bottomLeftY: 200, width: e, height: h)
         
+        canvas.fillColor = Color(hue: k * g * a, saturation: 100, brightness: 100, alpha: 100)
+        canvas.drawRectangle(bottomLeftX: k - 1, bottomLeftY: 250, width: g, height: h)
         
-        canvas.fillColor = Color(hue: u * q, saturation: 100, brightness: 100, alpha: 100)
-        canvas.drawRectangle(bottomLeftX: u, bottomLeftY: 100, width: q, height: h)
+        canvas.fillColor = Color(hue: f * d * a, saturation: 100, brightness: 100, alpha: 100)
+        canvas.drawRectangle(bottomLeftX: f - 1, bottomLeftY: 300, width: d, height: h)
         
+        canvas.fillColor = Color(hue: s * c * a, saturation: 100, brightness: 100, alpha: 100)
+        canvas.drawRectangle(bottomLeftX: s - 1, bottomLeftY: 350, width: c, height: h)
         
-        
-        canvas.fillColor = Color(hue: r * l, saturation: 100, brightness: 100, alpha: 100)
-        canvas.drawRectangle(bottomLeftX: r, bottomLeftY: 150, width: l, height: h)
-        
-        
-        
-        canvas.fillColor = Color(hue: o * e, saturation: 100, brightness: 100, alpha: 100)
-        canvas.drawRectangle(bottomLeftX: o, bottomLeftY: 200, width: e, height: h)
-        
-        
-        
-        
-        canvas.fillColor = Color(hue: k * g, saturation: 100, brightness: 100, alpha: 100)
-        canvas.drawRectangle(bottomLeftX: k, bottomLeftY: 250, width: g, height: h)
-        
-        
-        
-        
-        canvas.fillColor = Color(hue: f * d, saturation: 100, brightness: 100, alpha: 100)
-        canvas.drawRectangle(bottomLeftX: f, bottomLeftY: 300, width: d, height: h)
-        
-        
-        
-        canvas.fillColor = Color(hue: s * c, saturation: 100, brightness: 100, alpha: 100)
-        canvas.drawRectangle(bottomLeftX: s, bottomLeftY: 350, width: c, height: h)
-        
-        
-        
-        canvas.fillColor = Color(hue: j * b, saturation: 100, brightness: 100, alpha: 100)
-        canvas.drawRectangle(bottomLeftX: j, bottomLeftY: 400, width: b, height: h)
-        
-        
-        
-        canvas.fillColor = Color(hue: n * m, saturation: 100, brightness: 100, alpha: 100)
-        canvas.drawRectangle(bottomLeftX: n, bottomLeftY: 450, width: m, height: h)
+        canvas.fillColor = Color(hue: j * b * a, saturation: 100, brightness: 100, alpha: 100)
+        canvas.drawRectangle(bottomLeftX: j - 1, bottomLeftY: 400, width: b, height: h)
+    
+        canvas.fillColor = Color(hue: n * m * a , saturation: 100, brightness: 100, alpha: 100)
+        canvas.drawRectangle(bottomLeftX: n - 1, bottomLeftY: 450, width: m, height: h)
         
     }
 }
 
+canvas.copyToClipboard()
 
 
 
