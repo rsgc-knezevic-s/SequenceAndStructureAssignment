@@ -18,12 +18,29 @@
 import Cocoa
 import PlaygroundSupport
 
+
+
+// the variables below work together to randomize the width of the rectangles and position the next rectangle correctly
+// lets take z and w for example, w randomizes the width of any given rectangle on its plane and z is the sum of all past values of w
+//therefore the x cordinate is always z in that row and the width is w
+
+//h in a constant on line 45
+
+//many variables through lines  47-78
+
+//arithmatic operators from lines 82-91
+
+//random number generators from 94-103
+
+//loops on lines 80, 112
+
+
 // Create canvas
 let canvas = Canvas(width: 500, height: 500)
 
 canvas.drawShapesWithFill = true
 canvas.drawShapesWithBorders = false
-canvas.defaultBorderWidth = 5
+
 
 let h = 50
 
@@ -86,7 +103,12 @@ for x in stride(from: 0, through: 500, by: p){
     m = random(from: 5, toButNotIncluding: 50)
     
     
-    // arithmatic operators are used every 3 lines in the 
+    // arithmatic operators are used every 3 lines in the code for color to determine hue
+    
+    // because the variables' starting values are 1 (to prevent red from being dominant color at the beginning) there are arithmetic opterators every three lines
+    
+    //a is random number used to help randomize color
+    
     for y in stride(from: 0, through: 15, by: 10) {
         
           a = random(from: 0, toButNotIncluding: 10000)
