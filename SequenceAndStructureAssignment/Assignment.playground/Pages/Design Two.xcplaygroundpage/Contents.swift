@@ -109,8 +109,6 @@ for x in stride(from: 0, through: 500, by: p){
     
     //a is random number used to help randomize color
     
-    for y in stride(from: 0, through: 15, by: 10) {
-        
           a = random(from: 0, toButNotIncluding: 10000)
 
         canvas.fillColor = Color(hue: z * w * a, saturation: 100, brightness: 100, alpha: 100)
@@ -143,7 +141,6 @@ for x in stride(from: 0, through: 500, by: p){
         canvas.fillColor = Color(hue: n * m * a , saturation: 100, brightness: 100, alpha: 100)
         canvas.drawRectangle(bottomLeftX: n - 1, bottomLeftY: 450, width: m, height: h)
         
-    }
 }
 
 canvas.copyToClipboard()
